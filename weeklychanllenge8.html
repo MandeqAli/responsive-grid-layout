@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="so">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grid Card Layout</title>
+  <style>
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #112d6b;
+  --radius: 18px;
+  --gap: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #0b1724;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+}
+
+.page {
+  background-color: #fff;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 40px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+header {
+  margin-top: 30px;
+  text-align: center;
+  padding: 8px 16px;
+}
+header h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--accent);
+  font-weight: 700;
+}
+header p.lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.hero-grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.left {
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end; 
+  justify-content: center;
+  background: linear-gradient(180deg, #fff 0%, #fbfdff 100%);
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+.left img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+}
+
+.right {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+  align-content: start;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  position: relative;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 29px;
+  min-height: 260px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: 0 8px 22px rgba(16, 24, 40, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  transition: all 220ms ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(16, 24, 40, 0.1);
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(17, 45, 107, 0.05);
+  font-size: 22px;
+  color: var(--accent);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f1724;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card.treatment {
+  background: linear-gradient(180deg, #eef6ff 0%, #dfeeff 100%);
+
+}
+.card.prescriptions {
+  background: linear-gradient(180deg, #f0fff7 0%, #dbfbea 100%);
+}
+.card.diagnose {
+  background: linear-gradient(180deg, #eef6ff 0%, #dfeeff 100%);
+}
+.card.referrals {
+  background: linear-gradient(180deg, #f8faff 0%, #e9f1ff 100%);
+}
+
+/* Staggered card positioning for desktop */
+@media (min-width: 600px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  /* Only apply staggered positioning on larger screens */
+  .cards-grid article:nth-child(1),
+  .cards-grid article:nth-child(3) {
+    transform: translateY(30px);
+  }
+  
+  .cards-grid article:nth-child(2),
+  .cards-grid article:nth-child(4) {
+    transform: translateY(-15px);
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .left img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 1400px) {
+  body {
+    padding: 56px;
+  }
+  header h1 {
+    font-size: 36px;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Kyla constantly analyzes your health to<br/> predict and prevent future diseases</h1>
+      <p class="lead">Instantly access doctors, prescriptions, medical tests, referrals</p>
+    </header>
+
+    <main class="hero-grid" role="main" aria-labelledby="main-heading">
+      <section class="left">
+        <img src="WhatsApp Image 2025-11-13 at 21.46.59_dab120e4.jpg" alt="Phone app preview showing health dashboard" />
+      </section>
+
+      <aside class="right" aria-label="Features">
+        <div class="cards-grid">
+          <article class="card treatment">
+            <div class="icon">🩺</div>
+            <div>
+              <h3>Treatment</h3>
+              <p>We can treat most illnesses and provide referrals to a specialist for very complex conditions.</p>
+            </div>
+          </article>
+
+          <article class="card prescriptions">
+            <div class="icon">💊</div>
+            <div>
+              <h3>Prescriptions</h3>
+              <p>Kyla helps you get and refill prescriptions quickly and reliably.</p>
+            </div>
+          </article>
+
+          <article class="card diagnose">
+            <div class="icon">🔬</div>
+            <div>
+              <h3>Diagnose</h3>
+              <p>Kyla mails the results to your house and uses data to diagnose you precisely.</p>
+            </div>
+          </article>
+
+          <article class="card referrals">
+            <div class="icon">📁</div>
+            <div>
+              <h3>Referrals</h3>
+              <p>Kyla provides referrals to specialists, labs, imaging and other advanced tests.</p>
+            </div>
+          </article>
+        </div>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
