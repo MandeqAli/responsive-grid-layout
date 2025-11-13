@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-<<<<<<< HEAD
   <title>Grid Card Layout</title>
   <style>
 :root {
@@ -98,164 +97,30 @@ header p.lead {
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 25px;
+  gap: 32px;
   position: relative;
 }
 
 .card {
   background: var(--card);
   border-radius: 20px;
-  padding: 28px 29px;
+  padding: 28px 20px;
   min-height: 260px;
   width: 80%;
   display: flex;
   flex-direction: column;
   gap: 5px;
-=======
-  <title>Kyla — Grid Card Layout</title>
-  <style>
-    :root{
-      --bg:#f5f7fb;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#112d6b;
-      --soft-green:#e9f8f3;
-      --soft-blue:#eef6ff;
-      --radius:18px;
-      --gap:24px;
-    }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
-      color:#0b1724;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:32px;
-    }
-
-    /* Page container */
-    .page {
-      box-shadow: #0b1724 1 solid ;
-      background-color: rgb(255, 255, 255);
-      max-width:1200px;
-      margin:0 auto;
-      display:grid;
-      gap:40px;
-    }
-
-    /* Top heading */
-    header{
-      text-align:center;
-      padding: 8px 16px;
-    }
-    header h1{
-      margin:0 0 8px 0;
-      font-size:28px;
-      line-height:1.08;
-      color:var(--accent);
-      font-weight:700;
-    }
-    header p.lead{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* Main grid: uses CSS Grid to switch layout by breakpoint */
-    .hero-grid{
-      display:grid;
-      gap:var(--gap);
-      /* Mobile default: single column (image then content) */
-      grid-template-columns: 1fr;
-      align-items:start;
-    }
-
-    /* Left image area */
-    .left {
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:linear-gradient(180deg, #fff 0%, #fbfdff 100%);
-      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
-    }
-    .left img{
-      display:block;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      aspect-ratio: 4 / 3; /* keep a pleasing ratio on mobile */
-    }
-
-    /* Right content with 4 cards in grid */
-    .right {
-      display:grid;
-      gap:var(--gap);
-      grid-template-columns: 1fr; /* mobile: single column cards */
-      align-content:start;
-    }
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 32px; /* more gap between cards (vertical & horizontal) */
-  position: relative;
-}
-
-/* Give each card more height and clean rounded look */
-.card {
-  background: var(--card);
-  border-radius: 20px;
-  padding: 28px 24px;
-  min-height: 180px; /* increased height */
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
->>>>>>> 345a0394bea9d9b78562d6de70c278851953b2b2
   justify-content: flex-start;
   align-items: flex-start;
   box-shadow: 0 8px 22px rgba(16, 24, 40, 0.05);
   border: 1px solid rgba(15, 23, 42, 0.05);
   transition: all 220ms ease;
 }
-<<<<<<< HEAD
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 35px rgba(16, 24, 40, 0.1);
 }
 
-=======
-
-/* Hover effect */
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 16px 35px rgba(16, 24, 40, 0.10);
-}
-
-/* Card colors — clean pastel gradients */
-.card.treatment {
-  background: linear-gradient(180deg, #eef6ff 0%, #dfeeff 100%);
-}
-
-.card.prescriptions {
-  background: linear-gradient(180deg, #f0fff7 0%, #dbfbea 100%);
-}
-
-.card.diagnose {
-  background: linear-gradient(180deg, #eef6ff 0%, #dfeeff 100%);
-}
-
-.card.referrals {
-  background: linear-gradient(180deg, #f8faff 0%, #e9f1ff 100%);
-}
-
-/* Optional: stagger effect for visual variety */
-.cards-grid article:nth-child(1) { transform: translateY(30px); }
-.cards-grid article:nth-child(2) { transform: translateY(-30px); }
-.cards-grid article:nth-child(3) { transform: translateY(-30px); }
-.cards-grid article:nth-child(4) { transform: translateY(30px); }
-
->>>>>>> 345a0394bea9d9b78562d6de70c278851953b2b2
 .icon {
   width: 52px;
   height: 52px;
@@ -264,10 +129,7 @@ header p.lead {
   place-items: center;
   background: rgba(17, 45, 107, 0.05);
   font-size: 22px;
-<<<<<<< HEAD
   color: var(--accent);
-=======
->>>>>>> 345a0394bea9d9b78562d6de70c278851953b2b2
 }
 
 .card h3 {
@@ -276,10 +138,6 @@ header p.lead {
   font-weight: 600;
   color: #0f1724;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 345a0394bea9d9b78562d6de70c278851953b2b2
 .card p {
   margin: 0;
   color: var(--muted);
@@ -287,10 +145,8 @@ header p.lead {
   line-height: 1.5;
 }
 
-<<<<<<< HEAD
 .card.treatment {
   background: linear-gradient(180deg, #eef6ff 0%, #dfeeff 100%);
-
 }
 .card.prescriptions {
   background: linear-gradient(180deg, #f0fff7 0%, #dbfbea 100%);
@@ -341,53 +197,6 @@ header p.lead {
     font-size: 36px;
   }
 }
-=======
-
-    /* Tablet: two columns for hero-grid (stacked image+cards maybe side-by-side), and 2-column cards layout */
-    @media (min-width:600px){
-      .hero-grid{
-        grid-template-columns: 1fr 1fr;
-      }
-      .right{
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .left img{ aspect-ratio: 4 / 3; }
-    }
-
-    /* Desktop: image left and content right, make image taller */
-    @media (min-width:992px){
-      .hero-grid{
-        grid-template-columns: 1.1fr 1fr; /* image slightly larger */
-        align-items:start;
-      }
-      .left img{ aspect-ratio: 16 / 11; height:65vh; }
-      /* Make the right content a 2x2 grid */
-      .right{
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, minmax(120px, auto));
-        gap:20px;
-      }
-      /* Wrap cards into two columns visually using a nested grid */
-      .cards-grid{
-        display:grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap:20px;
-      }
-      /* When desktop, push the cards-grid into the right section fully */
-      .right > .cards-grid{
-        width:100%;
-      }
-    }
-
-    /* Small visual polish for very large screens */
-    @media (min-width:1400px){
-      body{ padding:56px; }
-      header h1{ font-size:36px; }
-    }
-
-    /* Utility */
-    .sr-only { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;}
->>>>>>> 345a0394bea9d9b78562d6de70c278851953b2b2
   </style>
 </head>
 <body>
@@ -398,7 +207,6 @@ header p.lead {
     </header>
 
     <main class="hero-grid" role="main" aria-labelledby="main-heading">
-<<<<<<< HEAD
       <section class="left">
         <img src="WhatsApp Image 2025-11-13 at 21.46.59_dab120e4.jpg" alt="Phone app preview showing health dashboard" />
       </section>
@@ -409,68 +217,30 @@ header p.lead {
             <div class="icon">🩺</div>
             <div>
               <h3>Treatment</h3>
-=======
-      <!-- LEFT: Image -->
-      <section class="left" aria-hidden="false">
-        <!-- Use the image placed next to this HTML file. Replace src if needed:
-             Example: src="/mnt/data/cards2.jpg" -->
-        <img src="/WeeklyChallenge/swr4.png" alt="Phone app preview showing health dashboard" />
-      </section>
-
-      <!-- RIGHT: Cards -->
-      <aside class="right" aria-label="Features">
-        <!-- For desktop we group into a 2x2 grid container; on tablet/mobile grid changes -->
-        <div class="cards-grid" aria-hidden="false">
-          <article class="card treatment" aria-labelledby="treatment-title">
-            <div class="icon">🩺</div>
-            <div>
-              <h3 id="treatment-title">Treatment</h3>
->>>>>>> 345a0394bea9d9b78562d6de70c278851953b2b2
               <p>We can treat most illnesses and provide referrals to a specialist for very complex conditions.</p>
             </div>
           </article>
 
-<<<<<<< HEAD
           <article class="card prescriptions">
             <div class="icon">💊</div>
             <div>
               <h3>Prescriptions</h3>
-=======
-          <article class="card prescriptions" aria-labelledby="presc-title">
-            <div class="icon">💊</div>
-            <div>
-              <h3 id="presc-title">Prescriptions</h3>
->>>>>>> 345a0394bea9d9b78562d6de70c278851953b2b2
               <p>Kyla helps you get and refill prescriptions quickly and reliably.</p>
             </div>
           </article>
 
-<<<<<<< HEAD
           <article class="card diagnose">
             <div class="icon">🔬</div>
             <div>
               <h3>Diagnose</h3>
-=======
-          <article class="card diagnose" aria-labelledby="diag-title">
-            <div class="icon">🔬</div>
-            <div>
-              <h3 id="diag-title">Diagnose</h3>
->>>>>>> 345a0394bea9d9b78562d6de70c278851953b2b2
               <p>Kyla mails the results to your house and uses data to diagnose you precisely.</p>
             </div>
           </article>
 
-<<<<<<< HEAD
           <article class="card referrals">
             <div class="icon">📁</div>
             <div>
               <h3>Referrals</h3>
-=======
-          <article class="card referrals" aria-labelledby="ref-title">
-            <div class="icon">📁</div>
-            <div>
-              <h3 id="ref-title">Referrals</h3>
->>>>>>> 345a0394bea9d9b78562d6de70c278851953b2b2
               <p>Kyla provides referrals to specialists, labs, imaging and other advanced tests.</p>
             </div>
           </article>
