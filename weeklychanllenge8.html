@@ -29,6 +29,8 @@
 
     /* Page container */
     .page {
+      box-shadow: #0b1724 1 solid ;
+      background-color: rgb(255, 255, 255);
       max-width:1200px;
       margin:0 auto;
       display:grid;
@@ -84,53 +86,82 @@
       grid-template-columns: 1fr; /* mobile: single column cards */
       align-content:start;
     }
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 32px; /* more gap between cards (vertical & horizontal) */
+  position: relative;
+}
 
-    .card {
-      background:var(--card);
-      border-radius:16px;
-      padding:20px;
-      min-height:120px;
-      display:flex;
-      gap:16px;
-      align-items:flex-start;
-      box-shadow: 0 4px 10px rgba(16,24,40,0.03);
-      transition: transform 220ms ease, box-shadow 220ms ease;
-      border: 1px solid rgba(15,23,42,0.03);
-    }
-    .card:hover{
-      transform: translateY(-6px) scale(1.01);
-      box-shadow: 0 12px 30px rgba(16,24,40,0.10);
-    }
+/* Give each card more height and clean rounded look */
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 24px;
+  min-height: 180px; /* increased height */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: 0 8px 22px rgba(16, 24, 40, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  transition: all 220ms ease;
+}
 
-    .icon {
-      width:48px;
-      height:48px;
-      flex:0 0 48px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      font-weight:700;
-      color:var(--accent);
-      background:linear-gradient(180deg, rgba(17,45,107,0.06), rgba(17,45,107,0.02));
-    }
+/* Hover effect */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 35px rgba(16, 24, 40, 0.10);
+}
 
-    .card h3{
-      margin:0 0 8px 0;
-      font-size:15px;
-      color: #0f1724;
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.4;
-    }
+/* Card colors — clean pastel gradients */
+.card.treatment {
+  background: linear-gradient(180deg, #eef6ff 0%, #dfeeff 100%);
+}
 
-    /* Decorative card backgrounds to match design */
-    .card.prescriptions{ background: linear-gradient(180deg,#f7fffb,#f0fff7); }
-    .card.treatment{ background: linear-gradient(180deg,#fbfdff,#eef6ff); }
-    .card.diagnose{ background: linear-gradient(180deg,#f7fffb,#f0fff7); }
-    .card.referrals{ background: linear-gradient(180deg,#fbfdff,#ffffff); }
+.card.prescriptions {
+  background: linear-gradient(180deg, #f0fff7 0%, #dbfbea 100%);
+}
+
+.card.diagnose {
+  background: linear-gradient(180deg, #eef6ff 0%, #dfeeff 100%);
+}
+
+.card.referrals {
+  background: linear-gradient(180deg, #f8faff 0%, #e9f1ff 100%);
+}
+
+/* Optional: stagger effect for visual variety */
+.cards-grid article:nth-child(1) { transform: translateY(30px); }
+.cards-grid article:nth-child(2) { transform: translateY(-30px); }
+.cards-grid article:nth-child(3) { transform: translateY(-30px); }
+.cards-grid article:nth-child(4) { transform: translateY(30px); }
+
+.icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(17, 45, 107, 0.05);
+  font-size: 22px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f1724;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 
     /* Tablet: two columns for hero-grid (stacked image+cards maybe side-by-side), and 2-column cards layout */
     @media (min-width:600px){
@@ -149,7 +180,7 @@
         grid-template-columns: 1.1fr 1fr; /* image slightly larger */
         align-items:start;
       }
-      .left img{ aspect-ratio: 16 / 11; height:100%; }
+      .left img{ aspect-ratio: 16 / 11; height:65vh; }
       /* Make the right content a 2x2 grid */
       .right{
         grid-template-columns: 1fr;
@@ -190,7 +221,7 @@
       <section class="left" aria-hidden="false">
         <!-- Use the image placed next to this HTML file. Replace src if needed:
              Example: src="/mnt/data/cards2.jpg" -->
-        <img src="/mnt/data/cards2.jpg" alt="Phone app preview showing health dashboard" />
+        <img src="/WeeklyChallenge/swr4.png" alt="Phone app preview showing health dashboard" />
       </section>
 
       <!-- RIGHT: Cards -->
